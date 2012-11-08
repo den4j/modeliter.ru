@@ -4,7 +4,7 @@ require 'capistrano-rbenv'
 set :dns_name, "198.61.213.140"
 
 set :application, "modeliter"
-set :repository,  "git://github.com/gvalmon/modeliter.ru.git"
+set :repository,  "git://github.com/den4j/modeliter.ru.git"
 
 role :web, dns_name                          # Your HTTP server, Apache/etc
 role :app, dns_name                          # This may be the same as your `Web` server
