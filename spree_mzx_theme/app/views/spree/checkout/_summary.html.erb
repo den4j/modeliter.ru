@@ -1,0 +1,43 @@
+<div class="order_summary">
+	<table data-hook="order_summary">
+		<tr>
+			<td colspan="2">
+			  <h3><%= t(:order_summary) %></h3>
+			</td>
+			<td colspan="2" class="edit">
+				<div class="right_paddings">
+					<%= link_to "Изменить", "/cart" %>
+				</div>
+			</td>
+		</tr>
+	<% @order.line_items.each do |item| %>
+		<tr class="line_item">
+			<td class="image">
+			  <% if (item.variant.product.model.instance_of?(CustomizedModel)) %>
+					<%= image_tag(item.variant.product.model.customizer.shopfront.url(:thumb), :class => "preview") %>
+				<% end %>
+			</td>
+			<td class="name" colspan="2">
+				<%=  item.variant.product.name %><br/>
+			  <%=  item.quantity %> шт.
+			</td>
+			<td class="price">
+			  <div class="right_paddings">
+					<%= money(item.price * item.quantity) unless item.quantity.nil? %>
+				</div>
+			</td>
+		</tr>
+	<% end %>
+	<tr class="order_total">
+		<td></td>
+		<td colspan=2 class="label">
+		  <%= t(:order_total) %>:
+		</td>
+		<td class="total">
+		  <div class="right_paddings">
+		    <%= money @order.total %>
+			</div>
+		</td>
+	</tr>
+	</table>
+</div>

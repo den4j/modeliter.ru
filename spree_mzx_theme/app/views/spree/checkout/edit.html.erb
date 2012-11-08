@@ -1,0 +1,40 @@
+<% content_for :head do %>
+  <%= javascript_include_tag states_url(:format => :js) %>
+<% end %>
+<div id="checkout" data-hook>
+  <!-- <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %> -->
+  <div class="row" data-hook="checkout_header">
+	  <div class="span12">
+	    <h1 data-hook="checkout_title"><%= t(:checkout_step) %></h1>
+	    <div data-hook="checkout_progress"><%= checkout_progress %></div>
+	  </div>
+  </div>
+  
+  <div class="row" data-hook="checkout_content">
+    <div class="span7 box" data-hook="checkout_form_wrapper">
+	    <% if (@order.state == 'payment') %>
+		    <div class="edit_order">
+          <%= render @order.state %>
+		    </div>
+		  <% else %>
+	      <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
+	        <% if !@order.email? or (@order.errors.any? {|field, msg| field == :email}) %>
+				    <div class="row">
+					    <div class="span7">
+			          <p class="field" style='clear: both'>
+			            <%= form.label :email %><br />
+			            <%= form.text_field :email %>
+			          </p>
+					    </div>
+				    </div>
+	        <% end %>
+	        <%= render @order.state, :form => form %>
+	      <% end %>
+		  <% end %>
+    </div>
+    <div class="span3" id="checkout-summary" data-hook="checkout_summary_box">
+      <%= render :partial => 'summary', :locals => { :order => @order } %>
+    </div>
+  </div>
+
+</div>

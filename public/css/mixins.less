@@ -1,0 +1,41 @@
+.button (@mainColor: #4C4, @textColor: #fff, @textShadowColor: rgba(0, 0, 0, 0.25)) {
+	@mainColorHighlight: darken(@mainColor, 10%);
+	font-family: Verdana;
+	font-size: 1em;
+	text-decoration: none;
+
+	.buttonBackground(@mainColor, @mainColorHighlight);
+	.box-shadow(3px 5px 0 darken(@mainColor, 15%));
+
+	padding: 5px 8px;
+
+	.border-radius(3px);
+	border: none;
+
+	&:hover, &:active, &.active {
+		.gradientBar(@mainColor, mix(@mainColor, @mainColorHighlight, 60%));
+		text-decoration: none;
+	}
+	&:active,
+	&.active {
+		.box-shadow(1px 2px 0 darken(@mainColor, 20%));
+		background-color: mix(@mainColor, @mainColorHighlight, 60%);
+	}
+
+	color: @textColor;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+#gradient {
+	.horizontal-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+		background-color: mix(@midColor, @endColor, 80%);
+		background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(@colorStop, @midColor), color-stop(100%, @endColor));
+		background-image: -webkit-linear-gradient(left, @startColor 0%, @midColor @colorStop, @endColor 100%);
+		background-image: -moz-linear-gradient(left, @startColor 0%, @midColor @colorStop, @endColor 100%);
+		background-image: -o-linear-gradient(left, @startColor 0%, @midColor @colorStop, @endColor 100%);
+		background-image: linear-gradient(to right, @startColor 0%, @midColor @colorStop, @endColor 100%);
+		background-repeat: no-repeat;
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@startColor),argb(@endColor))); // IE9 and down, gets no color-stop at all for proper fallback
+	}
+}
+

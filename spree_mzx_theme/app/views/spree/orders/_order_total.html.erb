@@ -1,0 +1,14 @@
+<tr class="order_total line-item">
+  <td colspan=3>
+  </td>
+  <td class="cart-item-quantity" data-hook="cart_item_quantity">
+    <%= button_tag :class => 'update', :id => 'update-button' do %>
+      <%= t(:update) %>
+    <% end %>
+  </td>
+  <td class="cart-item-total" data-hook="cart_item_total" colspan="2">
+    <div id="subtotal" data-hook class="columns sixteen alpha omega">
+      <h5><span class="order-total"><%= @order.display_total %></span></h5>
+    </div>
+  </td>
+</tr>

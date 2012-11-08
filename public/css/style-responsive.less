@@ -1,0 +1,106 @@
+@media (min-width: 1200px) {
+	.promobox {
+		&.promobox-create {
+			.promopicture {
+				background-image: url('/img/iphones_1200.png');
+			}
+		}
+		&.promobox-b2bprint {
+			.promopicture {
+				background: none;
+				background: url('/img/b2bprint_1200.jpg') 30px 30px no-repeat transparent;
+			}
+		}
+	}
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	.promobox {
+		h2 {
+			padding: 0;
+		}
+		&.promobox-create {
+			.promopicture {
+				background-image: url('/img/iphones_768.png');
+			}
+		}
+		&.promobox-b2bprint {
+			h1 br {
+				display: none;
+			}
+			.promopicture {
+				background: none;
+				background: url('/img/b2bprint_768.jpg') 30px 30px no-repeat transparent;
+			}
+			.btn-primary {
+				margin-top: 5px;
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.promobox {
+		h1 {
+			font-size: 1.5em;
+			text-shadow: none;
+		}
+		height: auto;
+		.bottom {
+			position: relative;
+			bottom: auto;
+			margin-left: inherit;
+			width: inherit;
+			background: none;
+			.inner {
+				margin: 15px 10px 10px;
+			}
+		}
+		.promopicture {
+			position: inherit;
+			top: auto;
+			left: auto;
+			width: auto;
+			z-index: 0;
+		}
+		&.promobox-b2bprint {
+			padding: 15px 30px 15px;
+			ul {
+				padding: 10px 0;
+			}
+			ul li {
+				color: #333;
+			}
+			.btn-primary {
+				margin-top: 0;
+			}
+			.promopicture {
+				background: url('/img/b2bprint_min.jpg') 50% 0 no-repeat transparent;
+				height: 179px;
+			}
+		}
+		&.promobox-create {
+			.promopicture {
+				background: url('/img/iphones_min.png') 50% 0 no-repeat transparent;
+				height: 162px;
+			}
+		}
+	}
+
+	.row-header {
+		margin-top: 20px;
+		margin-bottom: 5px;
+		h2 {
+			text-shadow: none;
+			font-size: 1.5em;
+		}
+		.moreLink {
+			text-align: left;
+			margin-top: 0px;
+		}
+	}
+
+    .product {
+	    .border-radius(0);
+	    width: 220px;
+	    margin: 0 auto 10px;
+    }
+}

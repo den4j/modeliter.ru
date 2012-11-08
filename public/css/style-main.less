@@ -1,0 +1,262 @@
+body {
+	padding: 0 0 40px;
+	background: url("/img/background.png") 0 0 repeat-x;
+}
+
+@navbar-color: #005189;
+.navbar {
+	height: 75px;
+	margin-bottom: 0;
+	color: @navbar-color;
+	.navbar-inner {
+		padding: 6px 0 0 0;
+		background: none;
+		border: none;
+		.box-shadow(none);
+	}
+	.brand {
+//		color: #ffffff;
+//		font-size: 2em;
+//		font-weight: bold;
+//		text-shadow: -1px -1px 1px #666;
+//		padding: 4px 50px 4px 20px;
+//		letter-spacing: -0.1em;
+//		font-family: Verdana;
+		padding: 0;
+		margin: 0 30px 0 0;
+		background: url('/img/logo.png') 0 0 no-repeat transparent;
+		width: 157px;
+		height: 45px;
+	}
+	.nav {
+		margin-top: 18px;
+		> li {
+			margin-right: 10px;
+			> a {
+				color: #fff;
+				text-decoration: underline;
+				color: white;
+				padding: 4px 15px;
+				font-family: Verdana;
+				text-shadow: -1px -1px #669;
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+
+		> .active {
+			> a, > a:hover,  > a:focus {
+				color: @navbar-color;
+				text-decoration: none;
+				background-color: #fff;
+				.border-radius(5px);
+				.box-shadow(none);
+			}
+		}
+	}
+	.upload {
+		float: right;
+		margin-top: 18px;
+		.upload-button {
+			.button(#4C4, #fff);
+		}
+	}
+}
+
+.mainbox {
+	margin-bottom: 30px;
+}
+
+.promobox {
+	@promoBoxBorderRadius: 8px;
+	.border-radius(@promoBoxBorderRadius);
+	border: 0;
+	background-color: white;
+	padding: 15px 30px;
+	.box-shadow(0 -2px 10px #aab);
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	.row {
+		z-index: 2;
+		position: relative;
+	}
+	.promopicture {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+	&.promobox-create {
+		.promopicture {
+			background: url('/img/iphones_normal.png') right 70% no-repeat transparent;
+		}
+	}
+
+	h1 {
+		font-size: 2em; // 28/14px
+		font-weight: bold;
+		color: #00a0b5;
+		text-shadow: 1px 1px 0 #404040;//, 2px 2px 0 #fff, -1px -1px 0 #fff, -1px 2px 0 #fff, 2px -1px 0 #fff, 0px 2px 0 #fff, 2px 0px 0 #fff, -1px 1px 0 #fff, 0px -1px 0 #fff;
+		font-family: Verdana;
+		line-height: 1.2;
+	}
+	h2 {
+		margin: 0;
+		font-size: 0.8571428571em;
+		font-weight: normal;
+		color: #023;
+		line-height: 1.5em;
+		font-family: Verdana;
+		text-shadow: none;
+	//text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, 0px 1px 0 #fff, 1px 0px 0 #fff, -1px 1px 0 #fff, 0px -1px 0 #fff;
+	//#gradient > .horizontal-three-colors(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85), 50%, rgba(255, 255, 255, 0));
+		//background: rgba(255, 255, 255, 0.85);
+		//.border-radius(10px);
+		padding: 10px;
+	}
+	.bottom {
+		position: absolute;
+		bottom: 0;
+		margin-left: -30px;
+		width: 100%;
+		background: url('/img/gray_pattern.png') 0 0 repeat;
+		.border-radius(0 0 @promoBoxBorderRadius @promoBoxBorderRadius);
+		.inner {
+			margin: 25px 30px 15px;
+		}
+	}
+	&.promobox-b2bprint {
+		padding: 35px 50px 0px;
+		h1 {
+			color: #00C0D5;
+		}
+		.promopicture {
+			background: none;
+			background: url('/img/b2bprint_normal.jpg') 30px 30px no-repeat transparent;
+		}
+		ul li {
+			color: #eee;
+		}
+		.btn-primary {
+			margin-top: 40px;
+		}
+	}
+	&.promobox-start {
+		ul li {
+			margin: 10px;
+		}
+	}
+}
+
+.row-header {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	h2 {
+		@h2Color: #0BC;
+		@h2AtTopColor: #446;
+
+		font-size: 1.7em;
+		font-weight: bold;
+		font-family: Verdana;
+		color: @h2Color;
+		text-shadow: -1px -1px 0 #888;
+
+		margin: 0;
+		padding: 0;
+		border: 0;
+
+		a {
+			color: @h2Color;
+			font-size: 1em;
+			text-decoration: none;
+			&:hover {
+				color: darken(@h2Color, -5%);
+				text-decoration: none;
+			}
+		}
+
+		&.atTop {
+			color: @h2AtTopColor;
+			text-shadow: 1px 1px 0 #cff;
+			a {
+				color: @h2AtTopColor;
+				&:hover {
+					color: darken(@h2AtTopColor, -10%);
+				}
+			}
+		}
+
+	}
+	.moreLink {
+		margin-top: 11px;
+		text-align: right;
+	}
+}
+
+.btn-primary {
+	padding: 10px 15px;
+	font-family: verdana;
+	font-size: 1.28571428571em; // 18/14px
+	font-weight: bold;
+	text-shadow: none;
+	color: #fff;
+	text-decoration: none;
+	.border-radius(5px);
+	border: none;
+	.box-shadow(3px 5px 0 #275586);
+	&:active,
+	&.active {
+		.box-shadow(1px 2px 0 #275586);
+		background-color: mix(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, 60%);
+	}
+}
+
+.product, .shop {
+	display: block;
+	text-decoration: none;
+	.border-radius (5px);
+
+	.inner {
+		padding: 10px 10px 15px;
+		text-decoration: none;
+		text-align: center;
+	}
+	.title {
+		font-size: 1.2em;
+		margin: 1em 0;
+		color: #08C;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&:hover {
+		color: #08C;
+		text-decoration: none;
+		.box-shadow(0px 3px 3px #aaa);
+	}
+}
+.product {
+	background: url('/img/gray_pattern.png') 0 0 repeat;
+	.price-button {
+		margin: 0 1em 0.5em;
+		float: right;
+		.button(#4C4);
+	}
+}
+
+.shop {
+	.inner {
+		border: 1px solid #ccc;
+		.border-radius(2px);
+	}
+}
+
+.btn-center {
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+}

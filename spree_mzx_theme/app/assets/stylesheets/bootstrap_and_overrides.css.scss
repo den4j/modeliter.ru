@@ -1,0 +1,6 @@
+@import "_bootstrap";
+
+$btnPrimaryBackground: #5C94D0;
+$btnPrimaryBackgroundHighlight:  darken($btnPrimaryBackground, 10%);
+
+@import "_bootstrap-responsive";

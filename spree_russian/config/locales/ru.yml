@@ -1,0 +1,62 @@
+ru:
+  spree:
+    Date: Дата
+    Time: Время
+  spree/order:
+    email: "Электронная почта"
+  activerecord:
+    attributes:
+      spree/address:
+        address: Адрес (улица, дом, квартира)
+        city: Населённый пункт
+        country: "Страна"
+        firstname: "Имя"
+        lastname: "Фамилия"
+        phone: Телефон
+        state: "Область/Регион"
+        zipcode: "Почтовый индекс"
+      spree/order:
+        checkout_complete: "Оформление заказа завершено"
+        completed_at: "Завершено"
+        created_at: Дата заказа
+        email: Электронная почта
+        ip_address: "IP-адрес"
+        item_total: "Итого по товарам"
+        number: Номер
+        payment_state: Состояние оплаты
+        shipment_state: Состояние доставки
+        special_instructions: "Специальные инструкции"
+        state: Состояние
+        total: Итого
+  status: Статус
+  order_state:
+    address: "Адрес доставки"
+    adjustments: "Надбавки"
+    awaiting_return: "Ожидает возврата"
+    canceled: "Отменён"
+    cart: "Корзина"
+    complete: Готово!
+    confirm: "Подтверждение"
+    delivery: "На доставке"
+    payment: "Оплата"
+    resumed: "Возобновлён"
+    returned: "Возвращён"
+    skrill: skrill
+  order_total: "Всего к оплате"
+  shopping_cart: "Корзина"
+  subtotal: Всего
+  update: Обновить
+  checkout: Заказать
+  empty_cart: Очистить корзину
+  checkout_step: Оформление заказа
+  your_cart_is_empty: В корзине пусто
+  continue_shopping: Добавить предметы
+  wait_for_redirect_to_payment_system: Сейчас произойдет переход на платежную систему...
+  redirect_to_robokassa: Нажмите, если переход не произошел
+  order_summary: Ваш заказ
+  current_order: Текущий заказ
+  last_order: Последний заказ
+  payments_accepted: Принятые платежи
+  notice/robokassa/success: Ваш платеж успешно принят!
+  notice/robokassa/fail: Ваш платеж отклонен, попробуйте снова
+  paid: Оплачен

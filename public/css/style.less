@@ -1,0 +1,20 @@
+
+//@import "../bootstrap/less/bootstrap.less";
+@import "../bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+
+@btnPrimaryBackground: #5C94D0;
+@btnPrimaryBackgroundHighlight:  darken(@btnPrimaryBackground, 10%);
+
+@import "../bootstrap/less/mixins.less";
+@import "../bootstrap/less/buttons.less";
+
+.reset {
+	float: none;
+	clear: both;
+}
+
+@import "mixins.less";
+
+@import "style-main.less";
+
+@import "style-responsive.less";

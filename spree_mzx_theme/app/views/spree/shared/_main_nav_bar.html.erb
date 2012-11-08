@@ -1,0 +1,31 @@
+<nav>
+  <ul class="nav">
+    <li><a href="#">Создание</a></li>
+    <li><a href="#">Магазин</a></li>
+    <li><a href="#">Материалы</a></li>
+
+    <% if user_signed_in? %>
+        <li>
+          <%= link_to('Выйти', destroy_user_session_path, :method=>'delete') %>
+        </li>
+    <% else %>
+        <li>
+          <%= link_to('Войти', new_user_session_path)  %>
+        </li>
+    <% end %>
+    <% if user_signed_in? %>
+        <li>
+          <%= link_to('Профиль', edit_user_registration_path) %>
+        </li>
+    <% else %>
+        <li>
+          <%= link_to('Регистрация', new_user_registration_path)  %>
+        </li>
+    <% end %>
+  </ul>
+  <!---->
+  <!--<ul id="main-nav-bar" class="inline" data-hook>-->
+    <!--<li id="home-link" data-hook><%= link_to t(:home), root_path %></li>-->
+    <!--<li id="link-to-cart" data-hook><%= link_to_cart %></li>-->
+  <!--</ul>-->
+</nav>

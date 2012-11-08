@@ -1,0 +1,86 @@
+<div class="row">
+	<div class="span8">
+	  <table id="cart-detail" data-hook>
+	    <thead>
+	    <tr data-hook="cart_items_headers">
+	      <th class="cart-item-description-header" colspan="2"><%= t(:item) %></th>
+	      <th class="cart-item-price-header"><%= t(:price) %></th>
+	      <th class="cart-item-quantity-header"><%= t(:qty) %></th>
+	      <th class="cart-item-total-header"><%= t(:total) %></th>
+	    </tr>
+	    </thead>
+	    <tbody id="line_items" data-hook>
+	    <% @order.line_items.each do |line_item| %>
+	      <% variant = line_item.variant %>
+	      <tr class="<%= cycle('', 'alt') %> line-item">
+	        <td class="cart-item-image" data-hook="cart_item_image">
+	          <% if (variant.product.model.instance_of?(CustomizedModel)) %>
+	            <%=  image_tag(variant.product.model.customizer.shopfront.url(:cart)) %>
+	          <% else %>
+	            <% if variant.images.length == 0 %>
+	              <%= link_to small_image(variant.product), variant.product %>
+	            <% else %>
+	              <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
+	            <% end %>
+	          <% end %>
+	        </td>
+	        <td class="cart-item-description" data-hook="cart_item_description">
+	          <h4><%= variant.product.name %></h4>
+	        </td>
+	        <td class="cart-item-price" data-hook="cart_item_price">
+	          <%= money line_item.price %>
+	        </td>
+	        <td class="cart-item-quantity" data-hook="cart_item_quantity">
+	          <%= line_item.quantity %><br/>
+	        </td>
+	        <td class="cart-item-total" data-hook="cart_item_total">
+	          <%= money(line_item.price * line_item.quantity) unless line_item.quantity.nil? %>
+	        </td>
+	      </tr>
+	    <% end %>
+	    <tr class="order_total line-item">
+	      <td colspan=4>
+	      </td>
+	      <td class="cart-item-total" data-hook="cart_item_total" colspan="1">
+	        <div id="subtotal" data-hook class="columns sixteen alpha omega">
+	          <h5><span class="order-total"><%= @order.display_total %></span></h5>
+	        </div>
+	      </td>
+	    </tr>
+	    </tbody>
+	    <%= render "spree/orders/adjustments" unless @order.adjustments.eligible.blank? %>
+	  </table>
+	</div>
+
+	<div class="span4">
+		<% if order.completed? %>
+		  <h6><%= t(:status) %></h6>
+		  <div class="order_status"><%= t(:paid) %></div>
+		<% end %>
+
+	  <% if order.has_step?("address") %>
+      <h6><%= t(:shipping_address) %></h6>
+      <div class="address">
+        <%= order.ship_address %>
+      </div>
+	  <% end %>
+
+	  <% completed_payments = order.payments.where(:state => "completed") %>
+	  <% if completed_payments.count > 0  %>
+	    <h6><%= t(:payments_accepted) %></h6>
+	    <ul class="payment-info">
+		    <% completed_payments.each {|payment| %>
+		      <li class="payment">
+		        <span class="completed_at"><%= payment.updated_at.to_s(:date_time24) %></span> &ndash;
+	          <span class="amount"><%= money payment.amount %></span>
+		      </li>
+			  <% } %>
+	    </ul>
+		<% end %>
+
+		<% unless order.completed? %>
+	     <%= link_to t(:checkout), checkout_state_path(@order.checkout_steps.first), :class => 'checkout btn btn-primary', :id => 'checkout-link' %>
+		<% end %>
+	</div>
+
+</div>

@@ -1,0 +1,11 @@
+{
+  "priority": 100,
+  "iso_code": "RUR",
+  "name": "URussian Ruble",
+  "symbol": "руб",
+  "subunit": "коп",
+  "subunit_to_unit": 100,
+  "html_entity": "",
+  "decimal_mark": ",",
+  "thousands_separator": " "
+}

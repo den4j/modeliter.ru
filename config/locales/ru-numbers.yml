@@ -1,0 +1,11 @@
+ru:
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "руб."
+        precision: 2
+        separator: '.'
+        delimiter: ','
+        significant: false
+        strip_insignificant_zeros: false

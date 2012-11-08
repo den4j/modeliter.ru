@@ -1,0 +1,16 @@
+<%= payment_service_for @order.id, Rails.configuration.robokassa_login,
+                        :amount =>  @order.total,
+                        :service => :robokassa,
+                        :secret => Rails.configuration.robokassa_secret,
+                        :html => {:id => 'robokassa_form', :style => 'display:none'} do |s| %>
+	<%= submit_tag "Submit" %>
+<% end %>
+<%=  link_to t(:redirect_to_robokassa), '#', :id => 'redirect_to_robokassa', :class => 'redirect' %>
+<%= javascript_tag do %>
+	function submit_robokassa() {
+    $('#robokassa_form').submit();
+		return false;
+	}
+	$('#redirect_to_robokassa').click(submit_robokassa);
+  setTimeout('submit_robokassa()', 3000);
+<% end %>
