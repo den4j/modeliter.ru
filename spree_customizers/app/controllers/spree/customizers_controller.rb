@@ -1,4 +1,4 @@
-class CustomizersController < Spree::BaseController
+class Spree::CustomizersController < Spree::BaseController
 
 	respond_to :html
 
