@@ -41,6 +41,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+group :development do
+  gem 'capistrano', '2.11.2'
+  gem 'capistrano-rbenv'
+end
+
 gem 'spree', '1.2.0'
 gem 'spree_usa_epay'
 gem 'spree_skrill'
