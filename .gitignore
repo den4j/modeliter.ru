@@ -14,5 +14,6 @@
 /log/*.log
 /tmp
 /log
+config/database.yml
 
 /.idea

@@ -20,7 +20,7 @@ set :user, 'deploy'
 # set :password, 'ssh_password'
 set :port, 22
 
-set :deploy_via, :remote_cache
+#set :deploy_via, :remote_cache
 set :keep_releases, 5
 set :scm, :git
 set(:rake_cmd) {"#{bundle_cmd rescue 'bundle'} exec rake RAILS_ENV=#{rails_env}"}
