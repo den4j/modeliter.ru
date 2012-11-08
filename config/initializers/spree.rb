@@ -23,6 +23,8 @@ json.force_encoding(::Encoding::UTF_8) if defined?(::Encoding)
 rur_currency = JSON.parse(json, :symbolize_names => true)
 Money::Currency.register(rur_currency);
 
+Spree::Config.set(:allow_ssl_in_production => false)
+
 #symbol = CGI::unescape_html("&#x0440;&#x0443;&#x0431;")
 #curr = {
 #		:priority => 100,
