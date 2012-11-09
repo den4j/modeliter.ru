@@ -1,8 +1,8 @@
 <ul class="nav block">
 	<% order = current_order(true) %>
 	<% if order %>
-		<% if order.completed? %>
-      <li><%= link_to "#{t(:last_order)}", order %></li>
+		<% if order.paid? or order.completed? %>
+      <li><%= link_to "t(:last_order)", order %></li>
 		<% else %>
 			<% unless order.line_items.count == 0 %>
 	      <li><%= link_to "#{t(:cart)} (#{order.line_items.count})", "/cart" %></li>

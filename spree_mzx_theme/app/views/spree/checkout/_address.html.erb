@@ -34,26 +34,9 @@
 	        <div class="span4">
 	          <% if Spree::Config[:address_requires_state] %>
 	            <p class="field" id="sstate">
-	              <% have_states = !@order.ship_address.country.states.empty? %>
 	              <%= ship_form.label :state, t(:state) %><span class="required">*</span><br />
-	              <% state_elements = [
-			              ship_form.collection_select(:state_id, @order.ship_address.country.states,
-			                                          :id, :name,
-			                                          {:include_blank => true},
-			                                          {:class => have_states ? 'required' : 'hidden',
-			                                           :disabled => !have_states}) +
-					              ship_form.text_field(:state_name,
-					                                   :class => !have_states ? 'required' : 'hidden',
-					                                   :disabled => have_states)
-	              ].join.gsub('"', "'").gsub("\n", "")
-	              %>
-	              <%= javascript_tag do -%>
-	                document.write("<%== state_elements %>");
-	              <% end %>
-	            </p>
-	            <noscript>
 	              <%= ship_form.text_field :state_name, :class => 'required' %>
-	            </noscript>
+	            </p>
 	          <% end %>
 	        </div>
 	      </div>
