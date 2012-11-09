@@ -1,3 +1,6 @@
-module CustomizersHelper
+module Spree
+	module CustomizersHelper
+
+	end
 end
 

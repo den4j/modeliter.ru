@@ -1,5 +1,4 @@
 class Spree::CustomizersController < Spree::BaseController
-	rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
 	respond_to :html
 
