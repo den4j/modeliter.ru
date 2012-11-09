@@ -1,4 +1,5 @@
-class Spree::CustomizersController < Spree::BaseController
+class CustomizersController < Spree::BaseController
+	rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
 	respond_to :html
 
@@ -42,9 +43,7 @@ class Spree::CustomizersController < Spree::BaseController
 		@order.add_variant(product.master, 1)
 
 		redirect_to "/checkout"
-
 	end
-
 
 	def get_show_template_path(customizer)
 		'customizers/show_' + customizer.name

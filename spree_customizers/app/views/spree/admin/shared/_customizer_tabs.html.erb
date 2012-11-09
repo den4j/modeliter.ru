@@ -1,0 +1,10 @@
+<% content_for :sidebar do %>
+  <ul class="sidebar" data-hook="admin_customizer_tabs">
+    <li<%== ' class="active"' if current == 'Customizer Details' %>>
+      <%= link_to t(:customizer_details), edit_admin_customizer_path(@customizer) %>
+    </li>
+    <li<%== ' class="active"' if current == 'Customization Params' %>>
+      <%= link_to t(:customization_params), admin_customizer_customization_params_path(@customizer) %>
+    </li>
+  </ul>
+<% end %>

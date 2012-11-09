@@ -1,0 +1,43 @@
+<div data-hook="admin_customization_param_form_fields">
+  <%= f.field_container :name do %>
+    <%= f.label :name, t(:name) %><br />
+    <%= f.text_field :name %>
+    <%= error_message_on :customizer, :name %>
+  <% end %>
+
+  <%= f.field_container :title do %>
+    <%= f.label :title, t(:title) %><br />
+    <%= f.text_field :title %>
+    <%= error_message_on :customizer, :title %>
+  <% end %>
+
+  <%= f.field_container :hint do %>
+    <%= f.label :hint, t(:hint) %><br />
+    <%= f.text_area :hint %>
+    <%= error_message_on :customizer, :hint %>
+  <% end %>
+
+  <%= f.field_container :type do %>
+    <%= f.label :type, t(:type) %><br />
+    <%= f.text_field :type %>
+    <%= error_message_on :customizer, :type %>
+  <% end %>
+
+  <%= f.field_container :order do %>
+    <%= f.label :order, t("customization_param/order") %><br />
+    <%= f.text_field :order %>
+    <%= error_message_on :customizer, :order %>
+  <% end %>
+
+  <%= f.field_container :default_value do %>
+    <%= f.label :default_value, t(:default_value) %><br />
+    <%= f.text_field :default_value %>
+    <%= error_message_on :customizer, :default_value %>
+  <% end %>
+
+  <%= f.field_container :customizer do %>
+    <%= f.label :customizer, t(:customizer) %><br />
+    <%= select(:customization_param, :customizer_id, Customizer.all.collect { |s| [s.title, s.id] }, { :include_blank => false }) %>
+  <% end %>
+	
+</div>

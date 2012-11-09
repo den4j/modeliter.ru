@@ -1,0 +1,39 @@
+<div data-hook="admin_customizer_form_fields">
+  <%= f.field_container :name do %>
+    <%= f.label :name, t(:name) %><br />
+    <%= f.text_field :name %>
+    <%= error_message_on :customizer, :name %>
+  <% end %>
+
+  <%= f.field_container :title do %>
+    <%= f.label :title, t(:title) %><br />
+    <%= f.text_field :title %>
+    <%= error_message_on :customizer, :title %>
+  <% end %>
+
+  <%= f.field_container :subtitle do %>
+    <%= f.label :subtitle, t(:subtitle) %><br />
+    <%= f.text_area :subtitle %>
+    <%= error_message_on :customizer, :subtitle %>
+  <% end %>
+
+  <%= f.field_container :price do %>
+    <%= f.label :price, t(:price) %><br />
+    <%= f.text_field :price %>
+    <%= error_message_on :customizer, :price %>
+  <% end %>
+
+  <%= f.field_container :description do %>
+    <%= f.label :description, t(:description) %><br />
+    <%= f.text_field :description %>
+    <%= error_message_on :customizer, :description %>
+  <% end %>
+
+
+  <%= f.field_container :shopfront do %>
+    <%= f.label :shopfront, t(:shopfront) %><br />
+    <%= f.file_field :shopfront %>
+    <%= error_message_on :customizer, :shopfront %>
+  <% end %>
+	
+</div>

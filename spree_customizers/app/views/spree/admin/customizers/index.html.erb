@@ -1,0 +1,36 @@
+<div class="toolbar" data-hook="toolbar">
+  <ul class="actions">
+    <li>
+      <%= button_link_to t(:new_customizer), new_admin_customizer_path,  :icon => 'add', :id => 'admin_new_customizer_link' %>
+    </li>
+  </ul>
+  <br class="clear" />
+</div>
+
+<h1><%= t(:customizers) %></h1>
+
+<table class="index" id='listing_customizers'>
+  <thead>
+    <tr data-hook="admin_customizers_index_headers">
+      <th colspan=2><%= t(:name) %></th>
+      <th><%= t(:title) %></th>
+      <th><%= t(:price) %></th>
+      <th data-hook="admin_customizers_index_header_actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customizers.each do |customizer|%>
+      <tr id="<%= spree_dom_id customizer %>" data-hook="admin_customizers_index_rows">
+        <td><%= image_tag customizer.shopfront(:thumb) %></td>
+        <td><%= customizer.name %></td>
+        <td><%= customizer.title %></td>
+        <td><%= customizer.price %></td>
+        <td style="width:140px;" data-hook="admin_customizers_index_row_actions">
+          <%= link_to t(:edit), edit_admin_customizer_path(customizer) %> &nbsp;
+          <%= link_to t(:delete), admin_customizer_path(customizer), :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

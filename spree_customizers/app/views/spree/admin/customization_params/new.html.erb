@@ -1,0 +1,18 @@
+<div data-hook="admin_customization_param_new_form_header">
+  <h1><%= t(:new_customization_param) %></h1>
+
+  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @customization_param } %>
+</div>
+
+<div data-hook="admin_customization_param_new_form">
+  <%= form_for [:admin, @customizer, @customization_param] do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div data-hook="admin_customization_param_new_form_buttons">
+      <p class="form-buttons" data-hook="buttons">
+        <%= button t('actions.create') %>
+        <%= t(:or) %> <%= link_to t('actions.cancel'), admin_customizer_customization_params_path(@customizer) %>
+      </p>
+    </div>
+  <% end %>
+</div>

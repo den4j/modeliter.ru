@@ -6,3 +6,4 @@ ru:
     customizers:
       index: "Главная"
       customizer: "Создание предмета"
+  customization_param/order: "Порядок"

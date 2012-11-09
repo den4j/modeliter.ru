@@ -1,0 +1,19 @@
+<%= render :partial => 'spree/admin/shared/customizer_tabs', :locals => { :current => 'Customization Params' } %>
+
+<div data-hook="admin_customization_param_edit_form_header">
+  <h1><%= t(:customization_param) %></h1>
+  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @customization_param } %>
+</div>
+
+<div data-hook="admin_customization_param_edit_form">
+  <%= form_for [:admin, @customizer, @customization_param] do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div data-hook="admin_customization_param_edit_form_buttons">
+      <p class="form-buttons" data-hook="buttons">
+        <%= button t(:update) %>
+        <%= t(:or) %> <%= link_to t(:cancel), admin_customizer_customization_params_path(@customizer) %>
+      </p>
+    </div>
+  <% end %>
+</div>

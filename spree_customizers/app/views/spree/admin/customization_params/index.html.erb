@@ -1,0 +1,43 @@
+<%= render :partial => 'spree/admin/shared/customizer_tabs', :locals => { :current => 'Customization Params' } %>
+
+<div class="toolbar" data-hook="toolbar">
+  <ul class="actions">
+    <li>
+      <%= button_link_to t(:new_customization_param), new_admin_customizer_customization_param_path(@customizer),  :icon => 'add', :id => 'admin_new_customization_param_link' %>
+    </li>
+  </ul>
+  <br class="clear" />
+</div>
+
+<h1><%= t(:customization_params) %></h1>
+
+<table class="index" id='listing_customization_params'>
+  <thead>
+    <tr data-hook="admin_customization_params_index_headers">
+      <th><%= t("customization_param/order") %></th>
+      <th><%= t(:name) %></th>
+      <th><%= t(:title) %></th>
+      <th><%= t(:hint) %></th>
+      <th><%= t(:type) %></th>
+      <th><%= t(:customizer) %></th>
+      <th data-hook="admin_customization_params_index_header_actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customization_params.sort_by(&:order).each do |customization_param|%>
+      <tr id="<%= spree_dom_id customization_param %>" data-hook="admin_customization_params_index_rows">
+        <td><%= customization_param.order %></td>
+        <td><%= customization_param.name %></td>
+        <td><%= customization_param.title %></td>
+        <td><%= customization_param.hint %></td>
+        <td><%= customization_param.type %></td>
+        <td><%= customization_param.customizer.title %></td>
+        <td style="width:140px;" data-hook="admin_customization_params_index_row_actions">
+          <%= link_to t(:edit), edit_admin_customizer_customization_param_path(@customizer, customization_param) %> &nbsp;
+          <%= link_to t(:delete), admin_customizer_customization_param_path(@customizer, customization_param), :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
