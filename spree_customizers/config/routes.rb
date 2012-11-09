@@ -1,6 +1,6 @@
 Spree::Core::Engine.routes.draw do
 	resources :customizers, :path => 'create'
-	post "/create/:id" => "spree/customizers#create_customized_model"
+	post "/create/:id" => "customizers#create_customized_model"
 
 	namespace :admin do
 		resources :customizers do
@@ -8,5 +8,5 @@ Spree::Core::Engine.routes.draw do
 		end
 	end
 
-	root :to => 'spree/customizers#index'
+	root :to => 'customizers#index'
 end
