@@ -18,5 +18,6 @@ config/database.yml
 
 /.idea
 
+/spree_robokassa/config/initializers/activemerchant.rb
+
 public/system/*
-spree_robokassa/config/initializers/activemerchant.rb
