@@ -63,7 +63,7 @@ module Spree
 		end
 
 		def create_notification
-			secret = params[:action] == :paid ? Rails.configuration.robokassa_secret2 : Rails.configuration.robokassa_secret1
+			secret = params[:action] == "paid" ? Rails.configuration.robokassa_secret2 : Rails.configuration.robokassa_secret1
 			@notification = Robokassa::Notification.new(request.query_string, :secret => secret)
 		end
 
