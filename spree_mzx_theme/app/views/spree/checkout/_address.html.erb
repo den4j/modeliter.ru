@@ -27,7 +27,6 @@
             <p class="field" id="scountry">
               <%= ship_form.label :country_id, t(:country) %> <br />
 		          <%= ship_form.text_field :country_id, :class => 'required' %>
-		          </span>
             </p>
           </div>
           <div class="span4">
@@ -106,19 +105,14 @@
         <%= bill_form.text_field :city, :class => 'required' %>
       </p>
 
-      <div class="span3">
         <p class="field" id="bcountry">
           <%= bill_form.label :country_id, t(:country) %> <br />
           <%= bill_form.text_field :country_id, :class => 'required' %>
-          </span>
         </p>
-      </div>
-      <div class="span4">
         <p class="field" id="bstate">
           <%= bill_form.label :state, t(:state) %> <br />
           <%= bill_form.text_field :state, :class => 'required' %>
         </p>
-      </div>
 
       <p class="field" id="bzipcode">
         <%= bill_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
