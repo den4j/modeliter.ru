@@ -256,3 +256,7 @@ ru:
   activerecord:
     errors:
       <<: *errors
+  devise:
+    user_sessions:
+      user:
+        signed_out: "Вы вышли из своего профиля"
