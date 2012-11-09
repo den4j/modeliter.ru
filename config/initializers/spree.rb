@@ -9,6 +9,8 @@ Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
   # config.site_name = "Spree Demo Site"
+	config.default_country_id = 168
+	config.checkout_zone = "SNG"
 	config.default_locale = "ru"
 	config.currency = "rur"
 	config.display_currency = false
