@@ -1,7 +1,7 @@
 <%= payment_service_for @order.id, Rails.configuration.robokassa_login,
                         :amount =>  @order.total,
                         :service => :robokassa,
-                        :secret => Rails.configuration.robokassa_secret,
+                        :secret => Rails.configuration.robokassa_secret1,
                         :html => {:id => 'robokassa_form', :style => 'display:none'} do |s| %>
 	<%= submit_tag "Submit" %>
 <% end %>
