@@ -1,6 +1,5 @@
 Modeliter::Application.routes.draw do
 
-  resources :posts
 
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
@@ -8,6 +7,7 @@ Modeliter::Application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
