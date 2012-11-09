@@ -45,5 +45,6 @@ namespace :db do
   desc "Make symlink for database.yml"
   task :create_symlink do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+    run "ln -nfs #{shared_path}/spree_robokassa/config/initializers/activemerchant.rb #{latest_release}/config/initializers/activemerchant.rb"
   end
 end
