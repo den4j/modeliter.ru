@@ -1,5 +1,5 @@
 <ul class="nav block">
-	<% order = current_order(true) %>
+	<% order = current_order() %>
 	<% if order %>
 		<% if order.paid? or order.completed? %>
       <li><%= link_to "t(:last_order)", order %></li>

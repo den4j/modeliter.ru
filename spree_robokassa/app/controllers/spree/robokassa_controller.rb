@@ -4,11 +4,13 @@ module Spree
 
 		skip_before_filter :verify_authenticity_token # skip before filter if you chosen POST request for callbacks
 
-		before_filter :create_notification
+		before_filter :create_notification, :except => [:paid]
 		before_filter :find_order
 
 		# Robokassa call this action after transaction
 		def paid
+			@notification = Robokassa::Notification.new(request.query_string,
+			                                            :secret => Rails.configuration.robokassa_secret2)
 			if @notification.acknowledge # check if it’s genuine Robokassa request
 				enter_payment
 				render :text => @notification.success_response
@@ -61,7 +63,7 @@ module Spree
 		end
 
 		def create_notification
-			@notification = Robokassa::Notification.new(request.query_string, :secret => Rails.configuration.robokassa_secret)
+			@notification = Robokassa::Notification.new(request.query_string, :secret => Rails.configuration.robokassa_secret1)
 		end
 
 		def find_order
