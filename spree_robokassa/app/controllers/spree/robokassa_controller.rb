@@ -34,17 +34,18 @@ module Spree
 		private
 
 		def enter_payment
-			payment = @order.payments.where(:state => 'processing', :amount => @notification.amount)
+			payment = @order.payments.where(:amount => @notification.amount)
 			if payment.empty?
 				payment = Spree::Payment.new
 				payment.amount = @notification.amount
 				payment.payment_method = Spree::PaymentMethod.find_by_type("Spree::BillingIntegration::Robokassa")
 				@order.payments << payment
 				payment.started_processing
+				payment.complete
 			else
 				payment = payment.first
+				payment.complete
 			end
-			payment.complete
 			#payment.complete
 			#@order.next!
 			#@order.update_totals

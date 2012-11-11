@@ -2,6 +2,7 @@
                         :amount =>  @order.total,
                         :service => :robokassa,
                         :secret => Rails.configuration.robokassa_secret1,
+                        :currency => 'BANKOCEAN2R',
                         :html => {:id => 'robokassa_form', :style => 'display:none'} do |s| %>
 	<%= submit_tag "Submit" %>
 <% end %>
