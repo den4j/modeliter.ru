@@ -1,6 +1,6 @@
 body {
   padding: 0 0 40px;
-  background: url("/img/background.png") 0 0 repeat-x;
+  background: url("/assets/background_bluegreen_short.png") 0 0 repeat-x;
 }
 
 h1 {
@@ -11,7 +11,7 @@ h1 {
 $navbar-color: #005189;
 
 .navbar {
-  height: 75px;
+  height: 64px;
   margin-bottom: 0;
   color: $navbar-color;
   .navbar-inner {
@@ -21,7 +21,7 @@ $navbar-color: #005189;
     @include box-shadow(none);
   }
   .block {
-    margin-top: 28px;
+    margin-top: 24px;
     color: white;
     float: left;
     &.phone {
@@ -30,9 +30,9 @@ $navbar-color: #005189;
       text-shadow: -1px -1px 1px #666;
       text-align: right;
       line-height: 0.8em;
-      margin-top: 20px;
+      margin-top: 16px;
       .call_to_action {
-        font-size: 0.6026em;
+        font-size: 0.55em;
       }
     }
   }
@@ -45,13 +45,13 @@ $navbar-color: #005189;
     //		letter-spacing: -0.1em;
     //		font-family: Verdana;
     padding: 0;
-    margin: 4px 10px 0 0;
+    margin: 0 10px 0 0;
     background: url('/img/logo.png') 0 0 no-repeat transparent;
     width: 157px;
     height: 45px;
   }
   .nav {
-    margin-top: 23px;
+    margin-top: 20px;
     float: right;
     > li {
       margin: 0;
@@ -60,7 +60,7 @@ $navbar-color: #005189;
         text-decoration: underline;
         color: white;
         padding: 4px 15px;
-        @include font(Verdana);
+        @include font(Arial);
         text-shadow: -1px -1px #669;
         &:hover {
           color: #fff;
