@@ -4,6 +4,7 @@ class Spree::CustomizersController < Spree::BaseController
 
 	def index
 		@customizers = Customizer.all
+		@top_customizer = Customizer.find_by_name("candle")
 		render 'index'
 	end
 
