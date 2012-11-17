@@ -1,6 +1,6 @@
 def assets_changed?
   from = source.next_revision(current_revision)
-  asset_dirs = "vendor/assets/ app/assets/"
+  asset_dirs = "vendor/assets/ app/assets/ */app/assets/"
   capture("cd #{latest_release} && #{source.local.log(from)} #{asset_dirs} | wc -l").to_i > 0
 end
 
