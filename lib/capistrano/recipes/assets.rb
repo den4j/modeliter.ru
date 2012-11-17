@@ -13,7 +13,7 @@ namespace :deploy do
         rsync_options = "--recursive --times --rsh=ssh --compress --human-readable --progress -e 'ssh -p #{port}'"
 
         run_locally("rm -rf public/assets/")
-        run_locally("rake RAILS_ENV=#{rails_env} assets:precompile")
+        run_locally("bundle exec rake RAILS_ENV=#{rails_env} assets:precompile")
         run_locally("rsync #{rsync_options} public/assets #{rsync_path}")
         run_locally("rm -rf public/assets/")
       else
