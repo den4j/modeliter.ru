@@ -14,6 +14,8 @@ namespace :deploy do
 
         run_locally("rm -rf public/assets/")
         run_locally("bundle exec rake RAILS_ENV=#{rails_env} assets:precompile")
+
+        #run ("cd #{latest_release} && #{rake_cmd} assets:precompile --trace")
         run_locally("rsync #{rsync_options} public/assets #{rsync_path}")
         run_locally("rm -rf public/assets/")
       else

@@ -1,4 +1,3 @@
-require 'bundler/capistrano'
 require 'capistrano-rbenv'
 
 set :dns_name, "198.61.213.140"

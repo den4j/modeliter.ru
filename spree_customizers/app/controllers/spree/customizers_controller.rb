@@ -1,7 +1,5 @@
 class Spree::CustomizersController < Spree::BaseController
 
-	respond_to :html
-
 	def index
 		@customizers = Customizer.all
 		@top_customizer = Customizer.find_by_name("candle")
@@ -10,12 +8,31 @@ class Spree::CustomizersController < Spree::BaseController
 
 	def show
 		@customizer = Customizer.find(params[:id])
-		if lookup_context.find_all(get_show_template_path(@customizer)).any?
-			render get_show_template_path(@customizer) and return
+		template_path = get_show_template_path(@customizer)
+		if lookup_context.find_all(template_path).any?
+			render template_path and return
 		else
 			render 'show'
 		end
 		#render :nothing => true
+	end
+
+	def image_selector
+		path = params[:path]
+		data = {}
+		search_string = "**/#{["spree_customizers", "app", "assets", path.split("/").select{|path| !path.empty? }].join("/**/")}/*"
+
+		Dir.glob(search_string).sort_by{|file| file}.each_with_index do |file, i|
+			asset_file = ActionController::Base.helpers.asset_path(file.split("/app/assets/images/")[1])
+			basename = File.basename(file)
+			if i == 0 then
+				data['default'] = basename
+			end
+			data[basename] = asset_file
+		end
+		respond_to do |format|
+			format.json { render :json => data}
+		end
 	end
 
 	def create_customized_model

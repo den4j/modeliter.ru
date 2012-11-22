@@ -1,38 +1,40 @@
-<div class="customizers-list boxed-list">
-  <div class="row row-header row-header-top mainbox">
-    <div class="span6 headers">
-        <h1>Создай реальный предмет<br/><span class="second_line">со своим дизайном и надписью</span></h1>
-		</div>
-	  <div class="span6 description">
-        <h2>Изготавливать вещи, которых ни у кого никогда не было, теперь так просто!</h2>
-        <h3>Выбери предмет &rarr; Придумай свой дизайн &rarr; Закажи 3D-печать с доставкой</h3>
-        <%-# <h2>Используя простые сервисы моделирования и технологию 3D-печати,<br/>получай вещи, которых ни у кого никогда не было.</h2> -%>
-    </div>
+<div class="row row-header row-header-top mainbox">
+  <div class="span6 headers">
+    <h1>Создай реальный предмет<br/><span class="second_line">со своим дизайном и надписью</span></h1>
   </div>
+  <div class="span6 description">
+    <h2>Изготавливать вещи, которых ни у кого никогда не было, теперь так просто!</h2>
 
-  <%= render :partial => 'top', :locals => { :customizer => @top_customizer } %>
-    <div class="row">
-	    <% i = 0 %>
-      <% @customizers.each do |customizer| %>
-		      <% if (customizer != @top_customizer) %>
-	          <% if i.even? && i > 0 %>
-	            </div><div class="row">
-	          <% end %>
-	          <div class="box customizer-item span6" style="background: url('<%= customizer.shopfront.url(:customizers_list) %>') 100% 100% no-repeat;">
-	            <div class="inner">
-	              <div class="title"><%=  customizer.title %></div>
-	              <div class="subtitle"><%=  customizer.subtitle %></div>
-	              <div class="button">
-	                <div class="inner">
-	                    <%= link_to "Создать предмет", customizer, :class => "btn btn-primary" %>
-	                    <%- # <a class="btn btn-primary">Создать предмет</a> -%>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-			      <% i+=1 %>
-			    <% end %>
-
-      <% end %>
-    </div>
+    <h3>Выбери предмет &rarr; Придумай свой дизайн &rarr; Закажи 3D-печать с доставкой</h3>
+    <%- # <h2>Используя простые сервисы моделирования и технологию 3D-печати,<br/>получай вещи, которых ни у кого никогда не было.</h2>  -%>
+  </div>
 </div>
+
+<%= render :partial => 'top', :locals => {:customizer => @top_customizer} %>
+<div class="customizers-list boxed-list">
+  <div class="row">
+    <% i = 0 %>
+    <% @customizers.each do |customizer| %>
+      <% if (customizer != @top_customizer) %>
+        <% if i.even? && i > 0 %>
+          </div>
+          <div class="row">
+        <% end %>
+        <div class="box customizer-item span6" style="background: url('<%= customizer.shopfront.url(:customizers_list) %>') 100% 100% no-repeat;">
+          <div class="inner">
+            <div class="title"><%= customizer.title %></div>
+            <div class="subtitle"><%= customizer.subtitle %></div>
+            <div class="button">
+              <div class="inner">
+                <%= link_to "Создать предмет", customizer, :class => "btn btn-primary" %>
+                <%- # <a class="btn btn-primary">Создать предмет</a>  -%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% i+=1 %>
+      <% end %>
+
+    <% end %>
+    </div>
+    </div>

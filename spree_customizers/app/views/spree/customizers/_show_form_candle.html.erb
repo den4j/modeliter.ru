@@ -1,0 +1,127 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "bootstrap-modal" %>
+<% end %>
+
+<div class="box">
+	<% if false %>
+	  <div class="row row-header"><div class="span12"><div class="paddings">
+	    <h1><%= customizer.title %></h1>
+	  </div></div></div>
+	<% end %>
+  <div class="row">
+    <div class="span5">
+      <div id="show-image" class="image">
+      </div>
+	    <ul id="thumbs-list" class="thumbs-list of3">
+		    <li><img class="current" src="/assets/candle/1.jpg" alt="" /></li>
+	      <li><img src="/assets/candle/2.jpg" alt="" /></li>
+	      <li><img src="/assets/candle/3.jpg" alt="" /></li>
+			</ul>
+      <div class="reset">&nbsp;</div>
+      <script type="text/javascript">
+	      $(document).ready(function() {
+		      thumbs("#thumbs-list", "#show-image");
+	      });
+	    </script>
+    </div>
+    <div class="span6">
+      <h1><%= customizer.title %></h1>
+      <div class="hint"><%= customizer.subtitle.html_safe %></div>
+      <div class="form">
+				<%= form_tag (customizer_path(customizer.id)) do %>
+		      <% params = {}
+		         customizer.customization_params.map { |param|
+		           params[param.name.to_sym] = param
+		         } %>
+		      <div class="row">
+			      <div class="span3">
+				      <div class="side side-a">
+					      <div class="title">
+					        <%= params[:a_design].title %>
+					      </div>
+					      <div class="design_switch switch" data-input-name="a_design">
+						      <span class="switch-button" data-value="label"><%=  t(:label) %></span>
+					        <span class="switch-button" data-value="pattern"><%=  t(:pattern) %></span>
+					        <span class="switch-button" data-value="leave_blank"><%=  t(:leave_blank) %></span>
+						      <%= hidden_field_tag :a_design, params[:a_design].default_value %>
+						      <div class="reset"></div>
+					      </div>
+					      <div class="candle_preview">
+						      <div class="candle_image" style="background: url('/assets/candle/a_clean.png') 50% 50% no-repeat">
+							      <div data-switch-value="label">
+						          <%= text_area_tag :a_label, params[:a_label].default_value %>
+							        <div class="hint"><%= params[:a_label].hint %></div>
+							      </div>
+						        <div data-switch-value="pattern" class="pattern_customizer">
+							        <div class="paddings">
+							          <div class="btn choose_pattern_button"><%= t(:choose_pattern) %></div>
+							          <%= hidden_field_tag :a_pattern %>
+								        <%= render :partial => 'empty_modal' %>
+							        </div>
+							      </div>
+						      </div>
+					      </div>
+				      </div>
+			      </div>
+			      <div class="span3">
+			        <div class="side side-b">
+				        <div class="title">
+				          <%= params[:b_design].title %>
+				        </div>
+				        <div class="design_switch switch" data-input-name="b_design">
+				          <span class="switch-button" data-value="label"><%=  t(:label) %></span>
+				          <span class="switch-button" data-value="pattern"><%=  t(:pattern) %></span>
+				          <span class="switch-button" data-value="leave_blank"><%=  t(:leave_blank) %></span>
+				          <%= hidden_field_tag :b_design, params[:b_design].default_value %>
+				          <div class="reset"></div>
+				        </div>
+			          <div class="candle_preview">
+			            <div class="candle_image" style="background: url('/assets/candle/b_clean.png') 50% 50% no-repeat">
+			              <div data-switch-value="label">
+			                <%= text_area_tag :b_label, params[:b_label].default_value %>
+			                <div class="hint"><%= params[:b_label].hint %></div>
+			              </div>
+			              <div data-switch-value="pattern" class="pattern_customizer">
+			                <div class="paddings">
+			                  <div class="btn choose_pattern_button"><%= t(:choose_pattern) %></div>
+			                  <%= hidden_field_tag :b_pattern %>
+			                  <%= render :partial => 'empty_modal' %>
+			                </div>
+			              </div>
+			            </div>
+			          </div>
+				      </div>
+			      </div>
+		        <script type="text/javascript">
+			        $(document).ready(function() {
+				        preview_candle_on_switch(".side-a .design_switch", ".side-a .candle_preview");
+				        preview_candle_on_switch(".side-b .design_switch", ".side-b .candle_preview");
+				        design_switch(".side-a .design_switch");
+				        design_switch(".side-b .design_switch");
+				        setup_candle_patterns_customizer(".side-a .pattern_customizer", "/customizers/image_selector/candle/a_pattern");
+				        setup_candle_patterns_customizer(".side-b .pattern_customizer", "/customizers/image_selector/candle/b_pattern");
+			        })
+		        </script>
+		      </div>
+
+		      <div class="submit_block row">
+			      <div class="span2">
+					    <%= link_to submit_title, '#', :class => 'btn btn-primary' %>
+			        <%= javascript_tag do -%>
+			          $('a.btn-primary').click(function(){
+			          $(this).closest('form').submit();
+			          return false;
+			          });
+			        <% end %>
+			      </div>
+			      <div class="span4">
+	            <div class="description"><%= customizer.description %></div>
+			      </div>
+		      </div>
+				<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

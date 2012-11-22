@@ -1,6 +1,16 @@
 @import "_bootstrap";
 
-$btnPrimaryBackground: #5C94D0;
-$btnPrimaryBackgroundHighlight:  darken($btnPrimaryBackground, 10%);
+//$btnPrimaryBackground: #5C94D0;
+$btnPrimaryBackgroundHighlight: #07B;
+$btnPrimaryBackground: lighten($btnPrimaryBackgroundHighlight, 10%);
+
+$btnBackgroundHighlight: #ddd;
+$btnBackground: lighten($btnBackgroundHighlight, 10%);
 
 @import "_bootstrap-responsive";
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}

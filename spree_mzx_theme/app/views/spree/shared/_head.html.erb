@@ -7,7 +7,12 @@
 <%== meta_data_tags %>
 
 <%= stylesheet_link_tag "application", :media => "all" %>
-<%= javascript_include_tag "application" %>
+<%= javascript_include_tag "jquery" %>
+<%= javascript_include_tag "store/spree_customizers" %>
+
+<% if false %>
+  <%= javascript_include_tag "application" %>
+<% end %>
 
 <%= favicon_link_tag image_path('favicon.ico') %>
 <%= csrf_meta_tags %>

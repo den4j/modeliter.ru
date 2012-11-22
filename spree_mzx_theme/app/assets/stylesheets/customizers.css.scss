@@ -1,3 +1,263 @@
-// Place all the styles related to the customizers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//.customizers-list {
+//  margin-top: 40px;
+//  margin-bottom: 40px;
+//}
+.customizer {
+  margin: 40px 0 0;
+  .box {
+    @include big-gray-box();
+    margin-bottom: 0;
+
+    .row:first-child {
+      padding-top: 20px;
+    }
+    > .row:last-child {
+      padding-bottom: 30px;
+    }
+  }
+  .image {
+    padding: 0 0 20px 20px;
+  }
+  .thumbs-list {
+    margin-left: 20px;
+    li {
+      list-style-type: none;
+      list-style-position: inside;
+      margin: 0;
+      padding: 0;
+      float: left;
+      img {
+        @include box-shadow(0px 3px 8px #555);
+        cursor: pointer;
+        &.current {
+          @include box-shadow(0px 6px 8px #3390C5);
+        }
+        &:hover {
+          @include box-shadow(0px 1px 4px #555);
+        }
+      }
+
+    }
+    &.of3 {
+      li {
+        width: 30%;
+        margin-right: 5%;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .hint {
+    margin: 20px 0;
+  }
+  .form {
+    padding: 0;
+    form {
+      margin-bottom: 0;
+    }
+    .param {
+      margin-bottom: 20px;
+      label {
+        font-size: 1.5em;
+        line-height: 1em;
+      }
+    }
+
+  }
+  .side {
+    width: 270px;
+    &.side-b {
+      //margin-left: 40px;
+      //border-left: 1px solid #999;
+    }
+    .title {
+      font-size: 1.6em;
+      line-height: 1em;
+      width: auto;
+      margin-bottom: 15px;
+    }
+    .hint {
+      margin: 0;
+    }
+    //$side-customizer-border-radius: 10px;
+    //$side-customizer-selected-color: mix($btnPrimaryBackground, $btnPrimaryBackgroundHighlight, 60%);
+    $side-customizer-border-radius: 3px;
+    $side-customizer-selected-color: #ccc;
+    $side-customizer-border-style: 1px solid $side-customizer-selected-color;
+    $side-customizer-border-top-left-style: 1px solid #f5f5f5;
+    .switch {
+      @include border-radius($side-customizer-border-radius $side-customizer-border-radius 0 0);
+      background: white;
+      border-bottom: $side-customizer-border-style;
+      .switch-button {
+        overflow: hidden;
+        color: white;
+        padding: 8px 0;
+        text-align: center;
+        @include font(Arial);
+        font-size: 1em;
+        font-weight: normal;
+        text-shadow: none;
+        color: #555;
+        text-decoration: none;
+        @include border-radius(0);
+        @include gradient-vertical(#E9E9E9, #F5F5F5);
+        @include box-shadow(0 2px 2px #999);
+        //@include box-shadow(inset 0 15px 15px rgba(255, 255, 255, 0.35));
+        //background: #fff;
+        border: none;
+        border-top: $side-customizer-border-top-left-style;
+        border-right: $side-customizer-border-style;
+        &[data-value=label] {
+          width: 78px;
+        }
+        &[data-value=pattern] {
+          width: 60px;
+        }
+        &[data-value=leave_blank] {
+          width: 130px;
+        }
+        &:hover,
+        &.hover {
+          @include box-shadow(inset 0 25px 15px rgba(255, 255, 255, 0.35));
+        }
+        &:active,
+        &.active {
+          @include box-shadow(inset 0 18px 20px #d0d0d0);
+        }
+        &.selected {
+          @include box-shadow(inset 0 18px 20px #d0d0d0);
+        }
+        &:first-of-type {
+          @include border-radius($side-customizer-border-radius 0 0 0);
+        }
+        &:last-of-type {
+          @include border-radius(0 $side-customizer-border-radius 0 0);
+          border-right: none;
+        }
+        cursor: pointer;
+        float: left;
+      }
+    }
+    .candle_preview {
+      width: 270px;
+      height: 290px;
+      @include border-radius(0 0 $side-customizer-border-radius $side-customizer-border-radius);
+      background-color: #fff;
+      .candle_image {
+        width: 100%;
+        height: 100%;
+
+        [data-switch-value=label] {
+          padding: 95px 20px;
+          text-align: center;
+          textarea {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            @include font(Verdana);
+            font-weight: bold;
+            color: #DB5;
+            font-size: 1.4em;
+            text-shadow: -1px -1px 0px #555;
+            padding: 15px 10px;
+            text-align: center;
+            line-height: 1.4em;
+            box-shadow: none;
+            @include box-shadow(0 1px 2px #bbb);
+            text-transform: uppercase;
+          }
+        }
+
+        .pattern_customizer {
+          width: 100%;
+          height: 100%;
+          > .paddings {
+            padding: 240px 0 0;
+            text-align: center;
+          }
+          .modal {
+            ul.choose_pattern_list {
+              margin: 0;
+              [data-candle-pattern-value] {
+                list-style-type: none;
+                list-style-position: inside;
+                float: left;
+                padding: 9px;
+                //border: 1px solid transparent;
+                cursor: pointer;
+                &:hover {
+                  @include border-radius(5px);
+                  //border: 1px solid #ddd;
+                  @include box-shadow(0 2px 1px #ccc);
+                  background-color: #f5f5f5;
+                }
+                img {
+                  max-width: 150px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .submit_block {
+    margin-top: 25px;
+    //margin-bottom: 10px;
+    .btn-primary {
+      @include box-shadow(0px 5px 0 #334455, 0 8px 8px #999);
+      min-width: 130px;
+      &:active {
+        position: relative;
+        bottom: -3px;
+        @include box-shadow(0px 2px 0 #334455, 0 4px 8px #999);
+      }
+    }
+    .description {
+      font-size: 0.928571429em; // 13/14px
+    }
+  }
+  h1 {
+    @include grand-h1();
+    color: #3390C5;
+    line-height: 1em;
+    margin: 0 0 20px 0;
+  }
+  .row-header {
+    [class*="span"] > .paddings {
+      padding: 20px 20px 0 20px;
+    }
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &.top-customizer {
+    .box {
+      height: auto;
+      .subtitle {
+        width: 500px;
+      }
+    }
+    //.image {
+    //  padding: 0;
+    //}
+    //.form {
+    //  padding: 0;
+    //}
+    //.row:first-child {
+    //  padding-top: 30px;
+    //}
+    //.row:last-child {
+    //  padding-bottom: 30px;
+    //}
+    //.row [class*="span"]:first-child > .paddings {
+    //  padding-left: 30px;
+    //}
+    //.row [class*="span"]:last-child > .paddings {
+    //  padding-right: 30px;
+    //}
+  }
+}
+
