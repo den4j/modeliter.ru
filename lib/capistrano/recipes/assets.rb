@@ -8,7 +8,7 @@ namespace :deploy do
   namespace :assets do
     task :precompile, roles: :web do
       is_first_deploy = !remote_file_exists?(File.join(current_path, "REVISION"))
-      if is_first_deploy || assets_changed?
+      #if is_first_deploy || assets_changed?
         rsync_path = "#{user}@#{dns_name}:#{shared_path}"
         rsync_options = "--recursive --times --rsh=ssh --compress --human-readable --progress -e 'ssh -p #{port}'"
 
@@ -18,9 +18,9 @@ namespace :deploy do
         #run ("cd #{latest_release} && #{rake_cmd} assets:precompile --trace")
         run_locally("rsync #{rsync_options} public/assets #{rsync_path}")
         run_locally("rm -rf public/assets/")
-      else
+      #else
         logger.info "Skipping asset precompilation because there were no asset changes"
-      end
+      #end
     end
 
     task :symlink, roles: :web do

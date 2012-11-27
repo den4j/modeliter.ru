@@ -1,5 +1,3 @@
-//= require store/spree_core
-
 function thumbs(thumbs_list_selector, display_image_selector) {
     var list = $(thumbs_list_selector);
     var display_image = $(display_image_selector);

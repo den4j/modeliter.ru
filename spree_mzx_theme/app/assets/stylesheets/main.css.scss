@@ -6,6 +6,8 @@ body {
 footer {
   padding: 30px;
   background-color: #fff;
+  border-top: 1px solid #CCC;
+  margin-top: 40px;
 }
 
 h1 {
@@ -471,6 +473,7 @@ $navbar-color: #005189;
         margin: 0;
         &.name {
           width: auto;
+          padding: 5px;
         }
         &.image {
           width: 48px;
@@ -512,9 +515,19 @@ $navbar-color: #005189;
   .field {
     label {
       display:inline;
+      &.error {
+        margin-left: 0.7em;
+        color: white;
+        background: red;
+        padding: 0 4px;
+        font-size: 0.85em;
+      }
     }
-    .field_with_errors {
-      background-color: #FBB;
+    .field_with_errors, input.error {
+      //background-color: #FBB;
+    }
+    &#scountry {
+      display: none;
     }
   }
   .btn-primary {

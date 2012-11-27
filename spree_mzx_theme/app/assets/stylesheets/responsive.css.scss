@@ -13,6 +13,72 @@
     }
   }
 }
+@media (max-width: 1199px) and (min-width: 980px) {
+  .navbar {
+    .brand_wrapper {
+      &.span2 {
+        width: 160px;
+      }
+    }
+    .block.mission {
+      &.span3 {
+        width: 200px;
+      }
+    }
+    .block.phone {
+      font-size: 1.3em;
+    }
+  }
+  .row-header {
+    &.row-header-top {
+      &.mainbox {
+        height: auto;
+      }
+      h1 {
+        font-size: 2.4em;
+      }
+      h2, h3 {
+        font-size: 0.89em;
+      }
+    }
+  }
+  .cart_box {
+    &.span8 {
+      width: 780px;
+    }
+  }
+  .checkout_button_wrapper {
+    &.span3 {
+      width: 380px;
+    }
+  }
+  #checkout {
+    .checkout_form_wrapper {
+      &.span7 {
+        width: 620px;
+      }
+      fieldset {
+        .row-header {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          .span7 {
+            width: 620px;
+          }
+        }
+        .field_wrapper {
+          &.span3 {
+            width: 300px;
+          }
+        }
+      }
+    }
+    #checkout-summary {
+      &.span3 {
+        width: 300px;
+      }
+    }
+  }
+}
 @media (max-width: 979px) and (min-width: 768px) {
   .promobox {
     h2 {
@@ -36,6 +102,103 @@
       }
     }
   }
+
+  .navbar {
+    .brand_wrapper {
+      &.span2 {
+        width: 150px;
+      }
+    }
+    .block.mission {
+      &.span3 {
+        width: 126px;
+      }
+    }
+    .navbar_wrapper {
+      width: 260px;
+    }
+    .block.phone {
+      width: 128px;
+      font-size: 1.2em;
+      margin-top: 28px;
+      .call_to_action {
+        display: none;
+      }
+    }
+    .nav > li > a {
+      font-size: 0.9em;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  .row-header {
+    &.row-header-top {
+      &.mainbox {
+        margin-top: 30px;
+        height: auto;
+        .description {
+          bottom: auto;
+        }
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      h2, h3 {
+        font-size: 0.89em;
+      }
+    }
+  }
+  .cart_box {
+    &.span8 {
+      width: 724px;
+    }
+  }
+  .checkout_button_wrapper {
+    &.span3 {
+      width: 414px;
+    }
+  }
+  #cart table#cart-detail td, #cart table#cart-detail th, #order table#cart-detail td, #order table#cart-detail th {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #checkout {
+    .checkout_form_wrapper {
+      &.span7 {
+        width: 724px;
+      }
+      fieldset {
+        .row-header {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          .span7 {
+            width: 724px;
+          }
+        }
+        .field_wrapper {
+          &.span3, &.span4 {
+            width: 290px;
+          }
+        }
+      }
+    }
+    #checkout-summary {
+      &.span3 {
+        width: 724px;
+      }
+      .order_summary {
+        margin: 20px 25px;
+        .line_item td{
+          padding: 10px;
+          &.name {
+            width: 340px;
+          }
+        }
+      }
+    }
+  }
+
+
 }
 @media (max-width: 767px) {
   .promobox {
@@ -103,4 +266,100 @@
     width: 220px;
     margin: 0 auto 10px;
   }
+
+  .navbar {
+    .brand_wrapper {
+      &.span2 {
+        width: 150px;
+      }
+    }
+    .block.mission {
+      &.span3 {
+        width: 126px;
+      }
+    }
+    .navbar_wrapper {
+      width: 260px;
+    }
+    .block.phone {
+      width: 128px;
+      font-size: 1.2em;
+      margin-top: 28px;
+      .call_to_action {
+        display: none;
+      }
+    }
+    .nav > li > a {
+      font-size: 0.9em;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  .row-header {
+    &.row-header-top {
+      &.mainbox {
+        margin-top: 30px;
+        height: auto;
+        .description {
+          bottom: auto;
+        }
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      h2, h3 {
+        font-size: 0.89em;
+      }
+    }
+  }
+  .cart_box {
+    &.span8 {
+      width: 724px;
+    }
+  }
+  .checkout_button_wrapper {
+    &.span3 {
+      width: 414px;
+    }
+  }
+  #cart table#cart-detail td, #cart table#cart-detail th, #order table#cart-detail td, #order table#cart-detail th {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #checkout {
+    .checkout_form_wrapper {
+      &.span7 {
+        width: 724px;
+      }
+      fieldset {
+        .row-header {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          .span7 {
+            width: 724px;
+          }
+        }
+        .field_wrapper {
+          &.span3, &.span4 {
+            width: 290px;
+          }
+        }
+      }
+    }
+    #checkout-summary {
+      &.span3 {
+        width: 724px;
+      }
+      .order_summary {
+        margin: 20px 25px;
+        .line_item td{
+          padding: 10px;
+          &.name {
+            width: 340px;
+          }
+        }
+      }
+    }
+  }
+
 }

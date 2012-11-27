@@ -1,0 +1,225 @@
+@media (max-width: 1199px) and (min-width: 980px) {
+  $normal-font-size: 0.9em;
+
+  .customizer {
+    .hint {
+      font-size: $normal-font-size;
+    }
+    .side-wrapper {
+      $side-width: 250px;
+      &.span3 {
+        width: $side-width;
+      }
+      .side {
+        width: $side-width;
+        .candle_preview {
+          width: $side-width;
+          height: 270px;
+          .candle_image {
+            [data-switch-value="label"] {
+              padding-top: 85px;
+              padding-bottom: 85px;
+              textarea {
+                width: 188px;
+                font-size: 1.2em;
+              }
+            }
+            .pattern_customizer {
+              > .paddings {
+                padding-top: 220px;
+              }
+            }
+          }
+        }
+        .switch {
+          .switch-button {
+            font-size: $normal-font-size;
+            padding: 6px 0;
+            &[data-value=label] {
+              width: 71px;
+            }
+            &[data-value=pattern] {
+              width: 54px;
+            }
+            &[data-value=leave_blank] {
+              width: 123px;
+            }
+          }
+        }
+      }
+    }
+    .submit_block {
+      .btn-primary {
+        min-width: 110px;
+      }
+    }
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  $normal-font-size: 0.9em;
+
+  .customizer {
+    .thumbs-list {
+      margin-left: 434px;
+      margin-top: -85px;
+      width: 270px;
+    }
+    .form {
+      margin-left: -414px;
+      margin-top: 160px;
+    }
+    .picture_wrapper {
+      &.span5 {
+        width: 414px;
+      }
+    }
+    .design_wrapper {
+      &.span7 {
+        width: 290px;
+      }
+    }
+    .hint {
+      font-size: $normal-font-size;
+    }
+    .side-wrapper {
+      $side-width: 250px;
+      &.span3 {
+        width: $side-width;
+      }
+      .side {
+        width: $side-width;
+        .candle_preview {
+          width: $side-width;
+          height: 270px;
+          .candle_image {
+            [data-switch-value="label"] {
+              padding-top: 85px;
+              padding-bottom: 85px;
+              textarea {
+                width: 188px;
+                font-size: 1.2em;
+              }
+            }
+            .pattern_customizer {
+              > .paddings {
+                padding-top: 220px;
+              }
+            }
+          }
+        }
+        .switch {
+          .switch-button {
+            font-size: $normal-font-size;
+            padding: 6px 0;
+            &[data-value=label] {
+              width: 71px;
+            }
+            &[data-value=pattern] {
+              width: 54px;
+            }
+            &[data-value=leave_blank] {
+              width: 123px;
+            }
+          }
+        }
+      }
+    }
+    .submit_block {
+      .submit_button_wrapper {
+        &.span2 {
+          width: 166px;
+        }
+      }
+      .description_wrapper {
+        &.span5 {
+          width: 352px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  $normal-font-size: 0.9em;
+
+  .customizer {
+    .thumbs-list {
+      margin-left: 434px;
+      margin-top: -85px;
+      width: 270px;
+    }
+    .form {
+      margin-left: -414px;
+      margin-top: 160px;
+    }
+    .picture_wrapper {
+      &.span5 {
+        width: 414px;
+      }
+    }
+    .design_wrapper {
+      &.span7 {
+        width: 290px;
+      }
+    }
+    .hint {
+      font-size: $normal-font-size;
+    }
+    .side-wrapper {
+      $side-width: 250px;
+      &.span3 {
+        width: $side-width;
+      }
+      .side {
+        width: $side-width;
+        .candle_preview {
+          width: $side-width;
+          height: 270px;
+          .candle_image {
+            [data-switch-value="label"] {
+              padding-top: 85px;
+              padding-bottom: 85px;
+              textarea {
+                width: 188px;
+                font-size: 1.2em;
+              }
+            }
+            .pattern_customizer {
+              > .paddings {
+                padding-top: 220px;
+              }
+            }
+          }
+        }
+        .switch {
+          .switch-button {
+            font-size: $normal-font-size;
+            padding: 6px 0;
+            &[data-value=label] {
+              width: 71px;
+            }
+            &[data-value=pattern] {
+              width: 54px;
+            }
+            &[data-value=leave_blank] {
+              width: 123px;
+            }
+          }
+        }
+      }
+    }
+    .submit_block {
+      .submit_button_wrapper {
+        &.span2 {
+          width: 166px;
+        }
+      }
+      .description_wrapper {
+        &.span5 {
+          width: 352px;
+        }
+      }
+    }
+  }
+}

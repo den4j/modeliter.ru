@@ -9,7 +9,7 @@
 	  </div></div></div>
 	<% end %>
   <div class="row">
-    <div class="span5">
+    <div class="span5 picture_wrapper">
       <div id="show-image" class="image">
       </div>
 	    <ul id="thumbs-list" class="thumbs-list of3">
@@ -24,7 +24,7 @@
 	      });
 	    </script>
     </div>
-    <div class="span6">
+    <div class="span7 design_wrapper">
       <h1><%= customizer.title %></h1>
       <div class="hint"><%= customizer.subtitle.html_safe %></div>
       <div class="form">
@@ -34,7 +34,7 @@
 		           params[param.name.to_sym] = param
 		         } %>
 		      <div class="row">
-			      <div class="span3">
+			      <div class="span3 side-wrapper">
 				      <div class="side side-a">
 					      <div class="title">
 					        <%= params[:a_design].title %>
@@ -63,7 +63,7 @@
 					      </div>
 				      </div>
 			      </div>
-			      <div class="span3">
+			      <div class="span3 side-wrapper">
 			        <div class="side side-b">
 				        <div class="title">
 				          <%= params[:b_design].title %>
@@ -105,7 +105,7 @@
 		      </div>
 
 		      <div class="submit_block row">
-			      <div class="span2">
+			      <div class="span2 submit_button_wrapper">
 					    <%= link_to submit_title, '#', :class => 'btn btn-primary' %>
 			        <%= javascript_tag do -%>
 			          $('a.btn-primary').click(function(){
@@ -114,7 +114,7 @@
 			          });
 			        <% end %>
 			      </div>
-			      <div class="span4">
+			      <div class="span5 description_wrapper">
 	            <div class="description"><%= customizer.description %></div>
 			      </div>
 		      </div>
